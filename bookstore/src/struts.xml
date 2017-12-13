@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	
+		<package name="osl" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="my" class="struts.lanjieqi"></interceptor>
+		</interceptors>
+			<action name="lanjieqi" class="struts.demoAction">
+				<result name="sy">/show.html</result>
+				<result name="rkdj">/index.jsp</result>
+				<result name="kclb">/table.jsp</result>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="my"></interceptor-ref>
+			</action>
+		</package>
+	</struts>
